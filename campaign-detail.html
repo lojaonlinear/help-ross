@@ -1,13 +1,13 @@
 <!DOCTYPE html><html lang="en-US"><head>
 <script src="./checkout-selector.js"></script>
-<script src="./utm-tracker.js"></script>
+
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Campaign — Lumani Impact</title>
-<link rel="preconnect" href="" crossorigin="">
+
 <link rel="icon" type="image/x-icon" href="./lumani-impact-favicon.png">
-<link rel="preconnect" href="https://randomuser.me">
+
 <noscript></noscript>
 <style>
 :root{
@@ -792,6 +792,7 @@ footer .footer-brand img[src$="lumani-impact-logo.png"],footer .fb img[src$="lum
 .nav-drawer-logo{height:64px!important;width:auto!important;max-width:210px!important;object-fit:contain!important}
 .footer-brand>img,footer .fb>img{height:44px!important;width:auto!important;max-width:220px!important;object-fit:contain!important}
 </style>
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
 
@@ -819,11 +820,11 @@ footer .footer-brand img[src$="lumani-impact-logo.png"],footer .fb img[src$="lum
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
       Search
     </button>
-    <button class="btn-cta" onclick="location.href='start-yourself.html'">Start a Campaign</button>
+    <button class="btn-cta" onclick="location.href='https://us.lumani-us.org/start-yourself.html'">Start a Campaign</button>
   </div>
   <button type="button" class="nav-search-icon" id="navSearchIcon" aria-label="Search" onclick="var o=document.getElementById('navSearchOverlay');o.classList.toggle('open');if(o.classList.contains('open'))setTimeout(function(){var i=o.querySelector('input');if(i)i.focus()},30)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#345B48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></button>
   <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-  <div class="nav-search-overlay" id="navSearchOverlay"><form onsubmit="event.preventDefault();var q=this.q.value.trim();if(q)location.href='campaigns.html?q='+encodeURIComponent(q)"><input type="search" name="q" placeholder="Search campaigns..." autocomplete="off"></form></div>
+  <div class="nav-search-overlay" id="navSearchOverlay"><form onsubmit="event.preventDefault();var q=this.q.value.trim();if(q)location.href='campaigns.html?q='+encodeURIComponent(q)"><input type="search" name="q" aria-label="Search campaigns" placeholder="Search campaigns..." autocomplete="off"></form></div>
 </nav>
 
 <!-- MOBILE NAV MENU (full-screen, grouped) -->
@@ -974,8 +975,8 @@ footer .footer-brand img[src$="lumani-impact-logo.png"],footer .fb img[src$="lum
         <span class="car-mob-name" id="orgNameCar"></span>
       </div>
       <div class="car-mob-title" id="carMobTitle"></div>
-      <button class="car-btn prev" id="carPrev" onclick="carNav(-1)">‹</button>
-      <button class="car-btn next" id="carNext" onclick="carNav(1)">›</button>
+      <button class="car-btn prev" aria-label="Previous slide" id="carPrev" onclick="carNav(-1)">‹</button>
+      <button class="car-btn next" aria-label="Next slide" id="carNext" onclick="carNav(1)">›</button>
       <!-- Summary slide (last carousel item) -->
       <div class="car-summary" id="carSummary">
         <div class="car-sum-card">
@@ -1026,7 +1027,7 @@ footer .footer-brand img[src$="lumani-impact-logo.png"],footer .fb img[src$="lum
 
     <!-- 5. Story -->
     <div class="story story-fade" id="storyBox"></div>
-    <button class="btn-more" id="readMoreBtn" onclick="toggleStory()" style="display:none">Read more ↓</button>
+    <button class="btn-more" aria-expanded="false" aria-controls="storyBox" id="readMoreBtn" onclick="toggleStory()" style="display:none">Read more ↓</button>
     <div id="campaignMedia"></div>
 
     <hr>
@@ -1049,15 +1050,15 @@ footer .footer-brand img[src$="lumani-impact-logo.png"],footer .fb img[src$="lum
         </div>
       </div>
       <!-- Inline small emojis — always visible, click opens modal -->
-      <div class="emoji-inline" id="emojiInline" onclick="openReactModal()" style="cursor:pointer">
+      <button type="button" aria-label="View your reaction" class="emoji-inline" id="emojiInline" onclick="openReactModal()" style="cursor:pointer">
         <span class="emoji-sm" data-emoji="🙏">🙏</span>
         <span class="emoji-sm" data-emoji="💗">💗</span>
         <span class="emoji-sm" data-emoji="💚">💚</span>
         <span class="emoji-sm" data-emoji="🌺">🌺</span>
         <span class="emoji-sm" data-emoji="🔥">🔥</span>
         <span class="emoji-sm" data-emoji="✨">✨</span>
-      </div>
-      <span class="react-total" id="reactCount" onclick="openReactModal()">0</span>
+      </button>
+      <button type="button" aria-label="View reaction count" class="react-total" id="reactCount" onclick="openReactModal()">0</button>
     </div>
 
     <hr>
@@ -1153,7 +1154,7 @@ footer .footer-brand img[src$="lumani-impact-logo.png"],footer .fb img[src$="lum
     <hr style="margin-bottom:14px">
 
     <!-- 11. Report -->
-    <button class="report-btn" onclick="window.location.href='contact.html#formContent'">
+    <button class="report-btn" onclick="window.location.href='https://us.lumani-us.org/contact.html#formContent'">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
       Report fundraiser
     </button>
@@ -1181,7 +1182,7 @@ footer .footer-brand img[src$="lumani-impact-logo.png"],footer .fb img[src$="lum
       <div class="raised-s" id="raisedGoal">of $0</div>
       <div class="don-stat">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-        <span><b id="statSup">0</b> recent donations</span>
+        <span><b id="statSup">0</b> donations recorded in the source</span>
       </div>
 
       <button class="btn-sd primary" onclick="goToDonate()">Donate now</button>
@@ -1302,21 +1303,21 @@ footer .footer-brand img[src$="lumani-impact-logo.png"],footer .fb img[src$="lum
   <div class="share-inner">
     <div class="share-text">
       <h2>Sharing helps more than you think</h2>
-      <p>On average, <strong>each share can inspire $50</strong> in donations by helping this fundraiser reach more people.</p>
+      <p>Sharing this fundraiser can help it reach more people.</p>
       <div class="share-btns">
         <button class="share-btn fb" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(lumaniImpactCampaignShareUrl(camp)),'_blank')">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
         </button>
-        <button class="share-btn ig" title="Share on Instagram" onclick="window.open('https://www.instagram.com/','_blank')">
+        <button class="share-btn ig" title="Share on Instagram" onclick="copyCampaignLink()">
           <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
         </button>
-        <button class="share-btn tk" title="Share on TikTok" onclick="window.open('https://www.tiktok.com/','_blank')">
+        <button class="share-btn tk" title="Share on TikTok" onclick="copyCampaignLink()">
           <svg width="23" height="23" viewBox="0 0 24 24" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.08a8.22 8.22 0 0 0 4.8 1.54V7.17a4.85 4.85 0 0 1-1.03-.48z"></path></svg>
         </button>
         <button class="share-btn wa" title="Share on WhatsApp" onclick="window.open('https://wa.me/?text='+encodeURIComponent('Check out this campaign: '+lumaniImpactCampaignShareUrl(camp)),'_blank')">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"></path></svg>
         </button>
-        <button class="share-btn more" title="More options" onclick="if(navigator.share){navigator.share({title:document.title,url:lumaniImpactCampaignShareUrl(camp)})}else{alert('Copy the URL to share!');}">
+        <button class="share-btn more" title="More options" onclick="shareNative()">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="5" cy="12" r="1.5" fill="#888"></circle><circle cx="12" cy="12" r="1.5" fill="#888"></circle><circle cx="19" cy="12" r="1.5" fill="#888"></circle></svg>
         </button>
       </div>
@@ -1385,7 +1386,7 @@ footer .footer-brand img[src$="lumani-impact-logo.png"],footer .fb img[src$="lum
       <div class="fsoc">
         <a href="https://www.instagram.com/" class="sb"><img src="./social-instagram.webp" loading="lazy" alt="Instagram" style="width:44px;height:44px"></a>      </div>
     </div>
-    <div class="fc"><h4>Platform</h4><ul><li><a href="campaigns.html">Explore Campaigns</a></li><li><a href="index.html#start">Start a Campaign</a></li></ul></div>
+    <div class="fc"><h4>Platform</h4><ul><li><a href="campaigns.html">Explore Campaigns</a></li><li><a href="https://us.lumani-us.org/start-yourself.html">Start a Campaign</a></li></ul></div>
     <div class="fc"><h4>Company</h4><ul><li><a href="https://us.lumani-us.org/about.html">About Us</a></li><li><a href="https://us.lumani-us.org/blog.html">Blog</a></li></ul></div>
     <div class="fc"><h4>Support</h4><ul><li><a href="https://us.lumani-us.org/help-center.html">Help Center</a></li><li><a href="https://us.lumani-us.org/contact.html">Contact Us</a></li><li><a href="https://us.lumani-us.org/privacy-policy.html">Privacy Policy</a></li><li><a href="https://us.lumani-us.org/terms-of-use.html">Terms of Use</a></li><li><a href="https://us.lumani-us.org/refund-cancellation-policy.html">Refund &amp; Cancellation Policy</a></li><li style="font-size:.83rem;color:transparent">EIN: 41-4895962</li></ul></div>
   </div>
@@ -1424,7 +1425,7 @@ footer .footer-brand img[src$="lumani-impact-logo.png"],footer .fb img[src$="lum
       <button class="sbtn" onclick="shareVia('email')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> Email</button>
     </div>
     <div class="slink-row">
-      <input class="slink-inp" type="text" id="shareLinkInput" readonly="">
+      <input class="slink-inp" type="text" aria-label="Campaign share link" readonly id="shareLinkInput">
       <button class="scopy" id="shareCopyBtn" onclick="copyLink()">Copy</button>
     </div>
     <button class="mclose" onclick="closeShare()">Close</button>
@@ -1479,68 +1480,16 @@ footer .footer-brand img[src$="lumani-impact-logo.png"],footer .fb img[src$="lum
         <div class="contact-org-lbl">Organizer</div>
       </div>
     </div>
-    <input class="contact-inp" id="contactInputName" type="text" placeholder="Your name">
-    <input class="contact-inp" id="contactInputEmail" type="email" placeholder="Your email">
-    <textarea class="contact-inp" id="contactInputMsg" placeholder="Your message" rows="4" style="min-height:90px"></textarea>
-    <button class="btn-sd primary" style="width:100%;margin-top:4px" onclick="submitContact()">Send message</button>
+    <p>This copy does not have a messaging service. Contact the organizer through the original campaign.</p>
+    <a class="btn-sd primary" id="originalCampaignContact" href="https://us.lumani-us.org/campaign-detail?slug=help-ross" target="_blank" rel="noopener noreferrer">Open original campaign</a>
   </div>
 </div>
 
 <script>
 
-// ── Random American donor generator ──
-const FIRST_NAMES=['James','John','Robert','Michael','William','David','Richard','Joseph','Thomas','Charles','Patricia','Jennifer','Linda','Barbara','Elizabeth','Susan','Jessica','Sarah','Karen','Lisa','Christopher','Daniel','Paul','Mark','Donald','Emily','Ashley','Amanda','Melissa','Stephanie','Rebecca','Laura','Sharon','Cynthia','Angela','Emma','Olivia','Ava','Isabella','Sophia','Mia','Charlotte','Amelia','Harper','Evelyn','Andrew','Joshua','Kevin','Brian','George','Edward','Ronald','Anthony','Kenneth','Steven','Tyler','Brandon','Nathan','Samantha','Madison','Hannah','Alexis','Rachel','Anna','Katherine','Brittany','Nicole'];
-const LAST_NAMES=['Smith','Johnson','Williams','Brown','Jones','Garcia','Miller','Davis','Rodriguez','Martinez','Hernandez','Lopez','Gonzalez','Wilson','Anderson','Thomas','Taylor','Moore','Jackson','Martin','Lee','Perez','Thompson','White','Harris','Sanchez','Clark','Ramirez','Lewis','Robinson','Walker','Young','Allen','King','Wright','Scott','Torres','Nguyen','Hill','Flores','Green','Adams','Nelson','Baker','Hall','Rivera','Campbell','Mitchell','Carter','Roberts','Phillips','Evans','Turner','Parker','Collins','Edwards','Stewart','Flores','Morris','Murphy','Cook','Rogers','Reed','Bailey','Bell','Cooper','Richardson','Cox','Howard'];
-const DON_AMTS=[25,50,100,300,500,1000];
-const DON_TIMES=['Just now','2 minutes ago','5 minutes ago','12 minutes ago','25 minutes ago','34 minutes ago','1 hour ago','2 hours ago','3 hours ago','5 hours ago','8 hours ago','1 day ago','2 days ago','3 days ago'];
-const DON_TIMES_ES=['Hace un momento','Hace 2 minutos','Hace 5 minutos','Hace 12 minutos','Hace 25 minutos','Hace 34 minutos','Hace 1 hora','Hace 2 horas','Hace 3 horas','Hace 5 horas','Hace 8 horas','Hace 1 día','Hace 2 días','Hace 3 días'];
-function randInt(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
-const MALE_FIRST_NAMES=new Set(['James','John','Robert','Michael','William','David','Richard','Joseph','Thomas','Charles','Christopher','Daniel','Paul','Mark','Donald','Andrew','Joshua','Kevin','Brian','George','Edward','Ronald','Anthony','Kenneth','Steven','Tyler','Brandon','Nathan']);
-function nameToAvatarUrl(name){
-  const firstName=name.split(' ')[0];
-  const isMale=MALE_FIRST_NAMES.has(firstName);
-  let h=0;
-  for(let i=0;i<name.length;i++)h=(h*31+name.charCodeAt(i))&0x7fffffff;
-  const n=h%100;
-  return`assets/avatars/${isMale?'men':'women'}/${n}.svg`;
-}
-function genDonors(n,sym,raisedCap){
-  sym=sym||'$';
-  const validAmts=raisedCap>0?DON_AMTS.filter(a=>a<=raisedCap):DON_AMTS;
-  if(validAmts.length===0)return[];
-  const minAmt=validAmts[0];
-  const out=[];
-  let budget=raisedCap>0?raisedCap:Infinity;
-  for(let i=0;i<n;i++){
-    // Reserve minimum for each remaining donor so the budget never runs dry
-    const remaining=n-i-1;
-    const maxForThis=budget-(minAmt*remaining);
-    const affordable=validAmts.filter(a=>a<=maxForThis);
-    if(affordable.length===0)break;
-    const fn=FIRST_NAMES[randInt(0,FIRST_NAMES.length-1)];
-    const ln=LAST_NAMES[randInt(0,LAST_NAMES.length-1)];
-    const isAnon=i>0&&Math.random()<0.15;
-    const fullName=fn+' '+ln;
-    const amt=affordable[randInt(0,affordable.length-1)];
-    budget-=amt;
-    const times=campLang==='es'?DON_TIMES_ES:campLang==='pt'?DON_TIMES_PT:campLang==='it'?DON_TIMES_IT:DON_TIMES;
-    const time=i===0?t('recentDonation','Recent donation'):times[randInt(1,times.length-1)];
-    const avatar=isAnon?null:nameToAvatarUrl(fullName);
-    out.push({name:isAnon?'Anonymous':fullName,amount:sym+amt.toLocaleString(),time,color:'#667085',avatar});
-  }
-  if(out.length===0)return out;
-  // Mark the highest non-anonymous donor as "Top donation"
-  const maxAmt=Math.max(...out.map(d=>parseInt(d.amount.replace(/[^0-9]/g,''))));
-  let topDone=false;
-  return out.map(d=>{
-    const v=parseInt(d.amount.replace(/[^0-9]/g,''));
-    if(!topDone&&v===maxAmt&&d.name!=='Anonymous'){topDone=true;return{...d,time:'Top donation'};}
-    return d;
-  });
-}
-
 const SUPA_URL='';
-const SUPA_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkdHRhdWhoYXJoZmVsdG5ocGtqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQzMTU4NTQsImV4cCI6MjA5OTg5MTg1NH0.R71aFaxAeRCCOv8R8bcz9we8q45FRysJZ4xNKaziA2k';
+const SUPA_KEY='';
+function escapeText(value){return String(value==null?'':value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 
 function optimizeImg(url,w=800){
   if(!url) return url;
@@ -1574,7 +1523,7 @@ function adaptCampaign(c){
   const pct=c.goal>0?Math.min(Math.round((c.raised/c.goal)*100),100):0;
   const supportCount=window.LumaniImpactCampaignMedia
     ? window.LumaniImpactCampaignMedia.supportCount(c)
-    : (c.raised>0?Math.max(Math.floor(c.raised/50),1):0);
+    : 0;
   return {
     ...c,
     cat: c.category,
@@ -1596,7 +1545,7 @@ function adaptCampaign(c){
     organizerSince: new Date(c.created_at).toLocaleDateString(LANG_LOCALE[campLang]||'en-US',{month:'long',year:'numeric'}),
     location: c.location||'United States',
     story: c.description?parseStory(c.description):[],
-    donors: [],
+    donors: Array.isArray(c.donors)?c.donors:[],
     updates: []
   };
 }
@@ -1756,7 +1705,7 @@ function applyStaticTranslations() {
   var spH2 = document.querySelector('.share-text h2');
   if (spH2) spH2.textContent = t('sharingH2','Sharing helps more than you think');
   var spP = document.querySelector('.share-text p');
-  if (spP) spP.innerHTML = t('sharingP','On average, <strong>each share can inspire $50</strong> in donations by helping this fundraiser reach more people.');
+  if (spP) spP.innerHTML = t('sharingP','Sharing this fundraiser can help it reach more people.');
   var ssSideP = document.querySelector('.share-sec p');
   if (ssSideP) ssSideP.textContent = t('shareSideP','On average, every share generates more donations — helping this fundraiser reach more people.');
   var nfH2 = document.querySelector('.not-found h2');
@@ -1934,13 +1883,6 @@ function lumaniImpactCampaignShareUrl(c){
     var _dbLang = (data[0].spanish === true) ? 'es' : (TRANSLATED_CAMPAIGNS[campId] || 'en');
     if (_dbLang !== campLang) { campLang = _dbLang; isSpanish = campLang === 'es'; applyStaticTranslations(); }
     try { sessionStorage.setItem('bff_lang_' + campId, campLang); } catch (e) {}
-    // Per-browser "my donation" augmentation of raised (localStorage only).
-    // Applied to RAW rows before adaptCampaign so all derived fields (pct, sup,
-    // formatted raised) reflect it. Other visitors still see the Supabase value.
-    if (window.bffMyDonations) {
-      window.bffMyDonations.applyToCampaign(data[0]);
-      allData.forEach(function(c){ window.bffMyDonations.applyToCampaign(c); });
-    }
     camp=adaptCampaign(data[0]);
     CAMPAIGNS_DB=allData.map(adaptCampaign);
   }catch(e){
@@ -1961,7 +1903,7 @@ if(true){
   // Remove skeleton — conteúdo real está pronto
   hideSkeleton();
 
-  if(camp.urgent){document.getElementById('urgentBanner').style.display='block';}
+  document.getElementById('urgentBanner').style.display='none';
   document.getElementById('campMain').style.display='block';
   document.getElementById('campSidebar').style.display='block';
   document.getElementById('relatedSection').style.display='block';
@@ -1992,7 +1934,7 @@ if(true){
     if(imgs.length>0){
       ci.style.background='';
       if(imgEl){
-        imgEl.src=imgs[i];
+        imgEl.alt=camp.title;imgEl.src=imgs[i];
         imgEl.style.objectFit=bgSize;
         imgEl.style.objectPosition=bgPos;
         imgEl.style.display='block';
@@ -2058,11 +2000,11 @@ if(true){
   if(totalSlides>1){
     document.getElementById('carPrev').style.display='flex';
     document.getElementById('carNext').style.display='flex';
-    imgs.forEach((_,i)=>{const d=document.createElement('button');d.className='cdot'+(i===0?' on':'');d.onclick=()=>setImg(i,true);cd.appendChild(d);});
-    const sd=document.createElement('button');sd.className='cdot';sd.onclick=()=>showSummary(true);cd.appendChild(sd);
+    imgs.forEach((_,i)=>{const d=document.createElement('button');d.className='cdot'+(i===0?' on':'');d.setAttribute('aria-label','Show photo '+(i+1));d.onclick=()=>setImg(i,true);cd.appendChild(d);});
+    const sd=document.createElement('button');sd.className='cdot';sd.setAttribute('aria-label','Show campaign summary');sd.onclick=()=>showSummary(true);cd.appendChild(sd);
   } else {
     // Only summary slide
-    const sd=document.createElement('button');sd.className='cdot';sd.onclick=()=>showSummary(false);cd.appendChild(sd);
+    const sd=document.createElement('button');sd.className='cdot';sd.setAttribute('aria-label','Show campaign summary');sd.onclick=()=>showSummary(false);cd.appendChild(sd);
   }
   setImg(0,false);
   window.carNav=function(d){
@@ -2110,7 +2052,7 @@ if(true){
     if(typeof item==='object'&&item.type==='img'){
       return `<div class="story-img-wrap"><img src="${item.src}" alt="${item.caption||''}" loading="lazy">${item.caption?`<div class="story-img-caption">${item.caption}</div>`:''}</div>`;
     }
-    return `<p>${item}</p>`;
+    return `<p>${escapeText(item)}</p>`;
   }).join('');
   const campaignMedia=document.getElementById('campaignMedia');
   if(campaignMedia&&window.LumaniImpactCampaignMedia){
@@ -2134,101 +2076,42 @@ if(true){
   document.getElementById('raisedAmt').textContent=camp.raised;
   document.getElementById('raisedGoal').textContent=t('of','of ')+camp.goal;
   document.getElementById('statSup').textContent=camp.sup;
-  document.getElementById('reactCount').textContent=camp.supN;
+  document.getElementById('reactCount').textContent='0';
   if(document.getElementById('shareLinkInput'))document.getElementById('shareLinkInput').value=campShareUrl(camp);
   if(document.getElementById('shareDesc'))document.getElementById('shareDesc').textContent=campLang==='es'?'Ayuda a "'+camp.title+'" a alcanzar su meta.':campLang==='pt'?'Ajude "'+camp.title+'" a atingir a sua meta.':campLang==='it'?'Aiuta "'+camp.title+'" a raggiungere il suo obiettivo.':'Help "'+camp.title+'" reach its goal.';
 
-  // Donors — only show if campaign has raised > $0
-  {
-    const raisedAmt=parseFloat((camp.raised||'0').replace(/[^0-9.]/g,''))||0;
-    if(raisedAmt>0){
-      const sym=camp.raised?camp.raised.replace(/[\d,. ]/g,'').trim()||'$':'$';
-      const realDonors=camp.donors&&camp.donors.length>0?camp.donors:[];
-      const needed=Math.max(5-realDonors.length, randInt(3,7));
-      const fakeDonors=genDonors(needed,sym,raisedAmt);
-      const allDonors=[...realDonors,...fakeDonors];
-      camp._allDonors=allDonors;
-      // Quantidade de fotos varia por campanha (0, 1 ou 2) — seeded pelo ID
-      // 30% nenhuma foto, 35% uma, 35% duas
-      const _campPhotoHash=(function(id){let h=5381,s=String(id);for(let i=0;i<s.length;i++)h=((h<<5)+h)^s.charCodeAt(i);return Math.abs(h)%100;})(camp.id);
-      const _campPhotoMax=_campPhotoHash<30?0:_campPhotoHash<65?1:2;
-      _globalPhotoSet=buildPhotoSet(allDonors,_campPhotoMax);
-      if(allDonors.length>0){
-        document.getElementById('donorsWrap').style.display='block';
-        document.getElementById('donorList').innerHTML=buildDonorRows(getRotatedSlice(allDonors, 5, 'donors_'+camp.id));
-      }
-    }
+  // Only source records are displayed; missing records stay empty.
+  camp._allDonors=camp.donors;
+  if(camp.donors.length){
+    document.getElementById('donorsWrap').style.display='block';
+    document.getElementById('donorList').innerHTML=buildDonorRows(camp.donors.slice(0,5));
   }
 
-  // Words of support
-  const SUPPORT_MSGS=[
-    "Wishing you all the strength and courage you need. You are not alone in this journey. ❤️",
-    "Sending so much love and support your way. Every little bit counts, and we believe in you!",
-    "Your story moved us deeply. We hope this small contribution helps make a difference.",
-    "Praying for you and your family. Stay strong — this community is behind you all the way.",
-    "Thank you for sharing your story. We are honored to be part of your journey. Stay strong!",
-    "You are an inspiration. Keep fighting — better days are ahead. Sending prayers from our family.",
-    "We saw your campaign and couldn't scroll past. You deserve all the support in the world.",
-    "Donating with love and hope. May you find the strength to get through this difficult time.",
-    "Our whole family is rooting for you. You have more people in your corner than you know.",
-    "What an incredible story. So grateful to be able to help in a small way. God bless you.",
-    "Sharing this far and wide — you deserve every bit of support coming your way. Stay hopeful!",
-    "This touched my heart. I hope this donation, however small, brings some comfort and hope.",
-  ];
-  const SUPPORT_MSGS_ES=[
-    "Te deseo toda la fuerza y el coraje que necesitas. No estás solo en este camino. ❤️",
-    "Te envío mucho amor y apoyo. ¡Cada granito cuenta y creemos en ti!",
-    "Tu historia nos conmovió profundamente. Esperamos que esta pequeña contribución ayude a marcar la diferencia.",
-    "Rezando por ti y por tu familia. Mantente fuerte — esta comunidad está contigo en todo momento.",
-    "Gracias por compartir tu historia. Es un honor ser parte de tu camino. ¡Mantente fuerte!",
-    "Eres una inspiración. Sigue luchando — vienen días mejores. Enviamos oraciones desde nuestra familia.",
-    "Vimos tu campaña y no pudimos seguir de largo. Mereces todo el apoyo del mundo.",
-    "Dono con amor y esperanza. Que encuentres la fuerza para superar este momento difícil.",
-    "Toda nuestra familia te apoya. Tienes más gente de tu lado de la que crees.",
-    "Qué historia tan increíble. Muy agradecido de poder ayudar aunque sea un poco. Que Dios te bendiga.",
-    "Compartiendo esto por todas partes — mereces todo el apoyo que recibas. ¡Mantén la esperanza!",
-    "Esto me llegó al corazón. Espero que esta donación, por pequeña que sea, traiga algo de consuelo y esperanza.",
-  ];
-  const SUPPORT_POOL = campLang==='es'?SUPPORT_MSGS_ES:SUPPORT_MSGS;
-  // Synthetic support words — NOT real comments and NOT tied to real donors
-  // (their own seeded example authors, so a real donor's name never shows an
-  // invented message). Count scales with the raised amount (3..11); the visible
-  // set rotates every hour via getRotatedSlice.
-  const raisedAmtW=(typeof camp.raisedN==='number')?camp.raisedN:(parseFloat((camp.raised||'0').replace(/[^0-9.]/g,''))||0);
   function renderWordsCards(shownWords){
     if(!shownWords.length) return;
-    const wordsPhotoSet=buildPhotoSet(shownWords, 2);
+
     document.getElementById('wordsSec').style.display='block';
     document.getElementById('wordsHr').style.display='block';
     document.getElementById('wordsCount').textContent=shownWords.length;
     document.getElementById('wordsList').innerHTML=shownWords.map(d=>{
       const ini=(d.name||'A').split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
-      const showWav=wordsPhotoSet.has(d.name)&&d.avatar;
-      const wavHtml=showWav
-        ?`<img src="${d.avatar}" alt="" style="width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0;display:block;border:1.5px solid var(--line)">`
-        :`<div class="word-av">${ini}</div>`;
+      const wavHtml=`<div class="word-av" aria-hidden="true">${escapeText(ini)}</div>`;
       const info=[d.amount,d.time].filter(Boolean).join(' · ');
       return `<div class="word-card">
         <div class="word-card-hdr">
           ${wavHtml}
           <div class="word-meta">
-            <div class="word-name">${d.name||'Anonymous'}</div>
-            ${info?`<div class="word-info">${info}</div>`:''}
+            <div class="word-name">${escapeText(d.name||'Anonymous')}</div>
+            ${info?`<div class="word-info">${escapeText(info)}</div>`:''}
           </div>
         </div>
-        <div class="word-msg">${d.message||''}</div>
+        <div class="word-msg">${escapeText(d.message||'')}</div>
       </div>`;
     }).join('');
   }
   const storedWords=Array.isArray(camp.words_of_support)?camp.words_of_support.filter(w=>w&&(w.message||w.name)):[];
   if(storedWords.length>0){
     renderWordsCards(storedWords.map(w=>({name:w.name||'Anonymous',amount:w.amount||'',time:w.time||'',message:w.message||'',avatar:null})));
-  } else if(raisedAmtW>0){
-    const symW=camp.raised?(camp.raised.replace(/[\d,. ]/g,'').trim()||'$'):'$';
-    const wordAuthors=buildSupportWords(camp.id, SUPPORT_POOL, symW);
-    const wordCount=supportWordCount(raisedAmtW, camp.id);
-    const shownWords=getRotatedSlice(wordAuthors, wordCount, 'words_'+camp.id);
-    renderWordsCards(shownWords);
   }
 
   // Related
@@ -2237,11 +2120,11 @@ if(true){
   // close async IIFE below after the closing brace of the if(true) block
   const rel=[...sameCat,...others];
   document.getElementById('relGrid').innerHTML=rel.map(c=>{
-    const donCount=c.sup>0?c.sup.toLocaleString()+' '+t('donations','donations'):t('beFirst','Be the first to donate');
+    const donCount=c.supN>0?c.supN.toLocaleString()+' '+t('donations','donations'):t('beFirst','Be the first to donate');
     const imgStyle=c.imgs&&c.imgs[0]?"background-image:url('"+c.imgs[0]+"')":'background:'+GRADS[c.img];
     const pctBar=Math.min(c.pct||0,100);
     const href=(window.campaignHref?window.campaignHref(c):('campaign-detail.html?id='+c.id));
-    return `<div class="cc" onclick="location.href='${href}'">
+    return `<a class="cc" href="${href}">
       <div class="cc-img" style="${imgStyle}">
         <div class="cc-don-badge">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
@@ -2249,12 +2132,12 @@ if(true){
         </div>
       </div>
       <div class="cc-body">
-        <div class="cc-org">${t('relBy','by')} ${c.organizer} ${t('relFor','for')} <span>${c.label}</span></div>
-        <div class="cc-title">${c.title}</div>
+        <div class="cc-org">${t('relBy','by')} ${escapeText(c.organizer)} ${t('relFor','for')} <span>${c.label}</span></div>
+        <div class="cc-title">${escapeText(c.title)}</div>
         <div class="cc-bar-wrap"><div class="cc-bar" style="width:${pctBar}%"></div></div>
         <div class="cc-raised">${c.raised} ${t('raised','raised')}</div>
       </div>
-    </div>`;
+    </a>`;
   }).join('');
 
   setTimeout(()=>{
@@ -2281,12 +2164,7 @@ if(true){
   const sumAvsEl=document.getElementById('carSumAvs');
   if(sumAvsEl){
     const avDonors=camp._allDonors&&camp._allDonors.length>0?camp._allDonors.slice(0,3):(camp.donors&&camp.donors.length>0?camp.donors.slice(0,3):[]);
-    const fallbackAvatars=[{avatar:'assets/avatars/women/44.svg'},{avatar:'assets/avatars/men/32.svg'},{avatar:'assets/avatars/women/68.svg'}];
-    sumAvsEl.innerHTML=(avDonors.length>0?avDonors:fallbackAvatars).slice(0,3).map((d,i)=>{
-      if(d.avatar) return `<img src="${d.avatar}" alt="" style="width:28px;height:28px;border-radius:50%;object-fit:cover;border:2px solid #fff;margin-left:${i>0?'-8px':'0'};display:block">`;
-      const ini=d.name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
-      return `<div class="car-sum-av" style="background:#08733D;margin-left:${i>0?'-8px':'0'}">${ini}</div>`;
-    }).join('');
+    sumAvsEl.innerHTML=avDonors.slice(0,3).map(d=>`<div class="car-sum-av" aria-hidden="true">${escapeText((d.name||'A').split(' ').map(w=>w[0]).join('').slice(0,2))}</div>`).join('');
   }
 
   // Mobile carousel overlays
@@ -2374,6 +2252,7 @@ function scrollToStory(){
 let expanded=false;
 function toggleStory(){
   expanded=!expanded;
+  document.getElementById('readMoreBtn').setAttribute('aria-expanded',String(expanded));
   document.getElementById('storyBox').classList.toggle('story-fade',!expanded);
   document.getElementById('readMoreBtn').textContent=expanded?t('showLess','Show less ↑'):t('readMore','Read more ↓');
 }
@@ -2408,7 +2287,7 @@ function pickEmoji(emoji){
 
 function updateReactSummary(){
   const cnt=document.getElementById('reactCount');
-  const baseN=camp?camp.supN:0;
+  const baseN=0;
   if(cnt){
     cnt.textContent=(baseN+(chosenEmoji?1:0)).toLocaleString();
     cnt.style.display='inline';
@@ -2425,23 +2304,10 @@ document.addEventListener('click',function(e){
 
 function openReactModal(){
   if(!camp)return;
-  const baseN=camp.supN+(chosenEmoji?1:0);
-  document.getElementById('reactModalTitle').textContent=(baseN).toLocaleString()+t('reactions',' reactions');
-  const emojis=['💚','💚','🙏','💜','💚','🙏','💜','👏','✨','💚','🙏','💜'];
-  // Use donors as reactors + fill with generic names
-  const names=[...camp.donors.map(d=>d.name),...['Alex T.','Maria S.','João P.','Laura M.','Carlos R.','Ana B.','Pedro C.','Sofia L.','Rui F.','Isabel G.']];
-  if(chosenEmoji){names.unshift('You');}
-  const rows=names.slice(0,Math.min(names.length,15)).map((name,i)=>{
-    const e=i===0&&chosenEmoji?chosenEmoji:emojis[i%emojis.length];
-    return `<div class="react-modal-row">
-      <div class="react-modal-av">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-        <span class="react-modal-emoji">${e}</span>
-      </div>
-      <div><div class="react-modal-name">${name}</div></div>
-    </div>`;
-  }).join('');
-  document.getElementById('reactModalList').innerHTML=rows;
+  document.getElementById('reactModalTitle').textContent='Your reaction';
+  document.getElementById('reactModalList').innerHTML=chosenEmoji
+    ?`<p class="local-reaction">${chosenEmoji} Your reaction on this device</p>`
+    :'<p class="local-reaction">Choose a reaction to show your support on this device.</p>';
   document.getElementById('reactModal').classList.add('open');
 }
 function closeReactModal(){document.getElementById('reactModal').classList.remove('open');}
@@ -2453,7 +2319,7 @@ if(reactOv)reactOv.addEventListener('click',e=>{if(e.target===reactOv)closeReact
 function _phData(camp){
   const imgSrc = camp.imgs && camp.imgs[0] ? camp.imgs[0] : '';
   const pct = Math.min(camp.pct || 0, 100);
-  // Usa <img> para evitar problemas de parsing de URL no CSS inline
+  // Render the preview image directly.
   const imgBlock = imgSrc
     ? `<img src="${imgSrc}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block" alt="">`
     : '';
@@ -2572,17 +2438,7 @@ function relScroll(dir){
   });
   drop.addEventListener('click', function(e){ e.stopPropagation(); });
 })();
-function goToDonate(){
-  let target;
-  if(typeof camp!=='undefined'&&camp){
-    target=camp.slug?'donate.html?slug='+encodeURIComponent(camp.slug):'donate.html?id='+camp.id;
-  }else{
-    let id='1';
-    try{id=new URLSearchParams(window.location.search).get('id')||'1';}catch(e){}
-    target='donate.html?id='+id;
-  }
-  location.href=window.LumaniImpactAttribution?window.LumaniImpactAttribution.decorate(target):target;
-}
+function goToDonate(){openDonation(camp);}
 
 function openShare(){const m=document.getElementById('shareModal');if(m)m.classList.add('open');}
 function closeShare(){const m=document.getElementById('shareModal');if(m)m.classList.remove('open');}
@@ -2595,111 +2451,15 @@ function openContact(){
   const av=document.getElementById('contactAv');
   av.textContent=camp.organizerInitials;
   av.style.background=GRADS[camp.img]||GRADS[1];
-  document.getElementById('contactInputName').value='';
-  document.getElementById('contactInputEmail').value='';
-  document.getElementById('contactInputMsg').value='';
+  document.getElementById('originalCampaignContact').href='https://us.lumani-us.org/campaign-detail?slug='+encodeURIComponent(camp.slug);
   document.getElementById('contactModal').classList.add('open');
 }
 function closeContact(){document.getElementById('contactModal').classList.remove('open');}
-function submitContact(){
-  const name=document.getElementById('contactInputName').value.trim();
-  const email=document.getElementById('contactInputEmail').value.trim();
-  const msg=document.getElementById('contactInputMsg').value.trim();
-  if(!name||!email||!msg){alert('Please fill in all fields.');return;}
-  alert('This static page cannot send messages. Please contact the organizer through the original campaign.');
-}
 
-// ── Hourly rotation helper ───────────────────────────
-// Rotates which subset is shown every 1h using localStorage.
-function getRotatedSlice(arr, size, key) {
-  if (!arr || arr.length === 0) return [];
-  try {
-    const ONE_HOUR = 60 * 60 * 1000;
-    const stored = JSON.parse(localStorage.getItem('bff_rot_' + key) || '{"page":0,"ts":0}');
-    const now = Date.now();
-    let page = stored.page;
-    if (now - stored.ts >= ONE_HOUR) {
-      const maxPages = Math.ceil(arr.length / size);
-      page = (page + 1) % maxPages;
-      localStorage.setItem('bff_rot_' + key, JSON.stringify({page, ts: now}));
-    }
-    const start = (page * size) % arr.length;
-    return [...arr.slice(start), ...arr.slice(0, start)].slice(0, size);
-  } catch(e) {
-    return arr.slice(0, size);
-  }
-}
-
-// ── Words of support: how many to show ───────────────────────────────────────
-// Scales with the raised amount (log): ~3 at $1k, ~7 at $20k. A seeded jitter
-// (stable per campaign) adds a "random" feel. Always clamped to 3..11.
-function supportWordCount(raised, campId){
-  var base = 3 + 3 * Math.log10((Number(raised) || 0) / 1000);
-  var jitter = (seededRank('wc_' + campId) % 3) - 1; // -1, 0 or +1
-  var n = Math.round(base) + jitter;
-  if (n < 3) n = 3;
-  if (n > 11) n = 11;
-  return n;
-}
-
-// Build the pool of support words: one message per entry, each with its own
-// deterministic (seeded-by-campaign) example author. Stable across reloads so
-// the hourly rotation is meaningful; real donors are never included here.
-function buildSupportWords(campId, pool, sym){
-  var times = campLang==='es'?DON_TIMES_ES:campLang==='pt'?DON_TIMES_PT:campLang==='it'?DON_TIMES_IT:DON_TIMES;
-  return pool.map(function(msg, i){
-    var seed = campId + '_w' + i;
-    var name = FIRST_NAMES[seededRank(seed+'f') % FIRST_NAMES.length] + ' ' + LAST_NAMES[seededRank(seed+'l') % LAST_NAMES.length];
-    var amt  = DON_AMTS[seededRank(seed+'a') % DON_AMTS.length];
-    var time = times[seededRank(seed+'t') % times.length];
-    return { name: name, amount: sym + amt.toLocaleString(), time: time, message: msg, avatar: nameToAvatarUrl(name) };
-  });
-}
-
-// Donor list helpers
-
-// Hash determinístico por nome — mesmo doador sempre tem o mesmo rank
-function seededRank(name){
-  let h=5381;
-  for(let i=0;i<name.length;i++)h=((h<<5)+h)^name.charCodeAt(i);
-  return Math.abs(h)%10000;
-}
-// Retorna Set com nomes dos até `max` doadores que vão mostrar foto nessa lista
-function buildPhotoSet(donors,max){
-  max=max||2;
-  const chosen=donors
-    .filter(d=>d.avatar&&d.name!=='Anonymous')
-    .sort((a,b)=>seededRank(a.name)-seededRank(b.name))
-    .slice(0,max);
-  // De-duplicate photos: nameToAvatarUrl maps names into only 100 images per
-  // gender, so two chosen donors can hash to the same picture. Bump colliding
-  // ones to the next free index so no photo repeats within the campaign.
-  const used=new Set();
-  chosen.forEach(function(d){
-    let url=d.avatar;
-    const m=/\/portraits\/(men|women)\/(\d+)\.jpg/.exec(url||'');
-    if(m){
-      const gender=m[1];
-      let idx=parseInt(m[2],10), tries=0;
-      while(used.has(url)&&tries<100){
-        idx=(idx+1)%100;
-        url='assets/avatars/'+gender+'/'+idx+'.svg';
-        tries++;
-      }
-      d.avatar=url;
-    }
-    used.add(url);
-  });
-  return new Set(chosen.map(d=>d.name));
-}
-
-// photoSet opcional — se passado, usa ele para decidir; se não, mostra só iniciais
+// Donor records use initials so they never depend on absent avatar files.
 function donorAvatar(d,size,photoSet){
   size=size||36;
   const ini=d.name==='Anonymous'?'?':d.name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
-  if(photoSet&&photoSet.has(d.name)&&d.avatar){
-    return `<img src="${d.avatar}" alt="" style="width:${size}px;height:${size}px;border-radius:50%;object-fit:cover;flex-shrink:0;display:block;border:1.5px solid var(--line)">`;
-  }
   return `<div class="dav">${ini}</div>`;
 }
 function buildDonorRows(donors){
@@ -2724,9 +2484,7 @@ function donModalRowHtml(d){
   const isTop=d.time==='Top donation';
   const dname=campLang!=='en'&&d.name==='Anonymous'?t('anonymous',d.name):d.name;
   const dtime=campLang!=='en'&&d.time==='Top donation'?t('topDonation',d.time):d.time;
-  const av=(_globalPhotoSet&&_globalPhotoSet.has(d.name)&&d.avatar)
-    ?`<img src="${d.avatar}" alt="" style="width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0;display:block;border:1.5px solid var(--line)">`
-    :`<div class="don-modal-av" style="background:var(--surface);color:var(--ink3);border:1px solid var(--line)">${ini}</div>`;
+  const av=`<div class="don-modal-av">${escapeText(ini)}</div>`;
   return `<div class="don-modal-row">${av}<div><div class="don-modal-name">${dname}</div><div class="don-modal-meta" ${isTop?'style="color:#F4B740;font-weight:700"':''}>${d.amount} · ${dtime}</div></div></div>`;
 }
 let _globalPhotoSet=new Set();
@@ -2758,21 +2516,25 @@ function shareVia(p){
   const shareUrl=lumaniImpactCampaignShareUrl(camp);
   const url=encodeURIComponent(shareUrl);
   const txt=encodeURIComponent(camp?camp.title+' — Lumani Impact':'Lumani Impact');
-  if(p==='instagram'){navigator.clipboard.writeText(decodeURIComponent(url)).catch(()=>{});window.open('https://www.instagram.com/','_blank');return;}
+  if(p==='instagram'){copyCampaignLink();return;}
   const links={whatsapp:`https://wa.me/?text=${txt}%20${url}`,facebook:`https://www.facebook.com/sharer/sharer.php?u=${url}`,email:`mailto:?subject=${txt}&body=${url}`};
   window.open(links[p],'_blank');
 }
-function copyLink(){
-  const i=document.getElementById('shareLinkInput');
-  if(i)navigator.clipboard.writeText(i.value).catch(()=>{});
-  const b=document.getElementById('shareCopyBtn');
-  if(b){b.textContent='✓';setTimeout(()=>{b.textContent='Copy';},2000);}
+async function copyCampaignLink(){
+  const url=lumaniImpactCampaignShareUrl(camp);
+  try{
+    if(!navigator.clipboard)throw new Error('Clipboard unavailable');
+    await navigator.clipboard.writeText(url);
+    showSiteNotice('Campaign link copied.');
+  }catch(error){
+    openShare();
+    const input=document.getElementById('shareLinkInput');
+    input.value=url;input.focus();input.select();
+    showSiteNotice('Select and copy the link from the share window.');
+  }
 }
-function copyShareLink(){
-  const shareUrl=lumaniImpactCampaignShareUrl(camp);
-  navigator.clipboard.writeText(shareUrl).catch(()=>{});
-  alert('Link copied!');
-}
+function copyLink(){return copyCampaignLink();}
+function copyShareLink(){return copyCampaignLink();}
 
 // Modal close on backdrop
 document.querySelectorAll('.moverlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o)o.classList.remove('open');}));
@@ -2808,7 +2570,7 @@ if(hbg&&mobNavEl){
   });
 }
 </script>
-<script src="./my-donations.js" defer=""></script>
+
 
 <script>
 (function(){
@@ -2822,7 +2584,8 @@ if(hbg&&mobNavEl){
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open'))closeM();});
 })();
 </script>
-<script src="./pagefly-bridge.js" defer=""></script>
 
 
+
+<script src="site.js"></script>
 </body></html>

@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "project": {
+    "name": "lumani-site",
+    "productType": null,
+    "stack": []
+  },
+  "sources": {
+    "tokens": [],
+    "components": [],
+    "assets": [
+      "assets"
+    ],
+    "instructions": []
+  },
+  "design": {
+    "colorMode": "unknown",
+    "colors": {},
+    "typography": {},
+    "spacing": {},
+    "radius": {},
+    "shadows": {},
+    "motion": {},
+    "density": "unknown"
+  },
+  "components": {
+    "installed": [],
+    "preferredPrimitives": [],
+    "patterns": []
+  },
+  "constraints": {
+    "must": [],
+    "avoid": []
+  },
+  "decisions": {
+    "donationPopup": "Match the user-provided reference: campaign preview, green header, six amount options, yellow continue button, responsive native modal. Keep existing branding."
+  },
+  "evidence": [],
+  "generatedAt": "2026-11-17T18:53:38.839Z"
+}

@@ -6,8 +6,7 @@
     : '';
   var scriptBase = '';
   if (/^https?:\/\//i.test(scriptSrc)) {
-    var origin = scriptSrc.match(/^https?:\/\/[^/]+/i);
-    scriptBase = origin ? origin[0] + '/' : '';
+    scriptBase = scriptSrc.slice(0, scriptSrc.lastIndexOf('/') + 1);
   } else if (scriptSrc) {
     scriptBase = scriptSrc.slice(0, scriptSrc.lastIndexOf('/') + 1);
   }
@@ -98,8 +97,7 @@
   function supportCount(campaign) {
     var imported = Number(String(campaign && campaign.donations_count || '').replace(/[^0-9.-]/g, ''));
     if (Number.isFinite(imported) && imported > 0) return Math.round(imported);
-    var raised = Number(campaign && campaign.raised || 0);
-    return raised > 0 ? Math.max(Math.floor(raised / 50), 1) : 0;
+    return 0;
   }
 
   function mountPlayers(root) {

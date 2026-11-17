@@ -39,14 +39,14 @@
     const method = (init && init.method || 'GET').toUpperCase();
     if (raw.includes('/rest/v1/campaigns')) {
       if (method !== 'GET')
-        return jsonResponse({offline:true,simulated:true}, 201);
+        return jsonResponse({error:'This static site does not support writes.'}, 405);
       return jsonResponse(applyCampaignQuery(raw));
     }
     if (raw.includes('/api/site-config.php')) return jsonResponse(SITE_CONFIG);
     if (raw.includes('api.web3forms.com/submit') && method === 'POST')
-      return jsonResponse({success:true,offline:true}, 200);
+      return jsonResponse({success:false,error:'Messaging is unavailable.'}, 503);
     if (raw.includes('/storage/v1/object/') && method === 'POST')
-      return jsonResponse({offline:true,simulated:true}, 201);
+      return jsonResponse({error:'This static site does not support writes.'}, 405);
     if (raw.includes('/api/') || raw.includes('/storage/v1/object/'))
       return jsonResponse({offline:true,error:'Operacao indisponivel na copia local.'}, 503);
     if (nativeFetch) return nativeFetch(input, init);
