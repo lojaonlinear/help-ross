@@ -2077,6 +2077,7 @@ if(true){
   document.getElementById('raisedAmt').textContent=camp.raised;
   document.getElementById('raisedGoal').textContent=t('of','of ')+camp.goal;
   document.getElementById('statSup').textContent=camp.sup;
+  if(!camp.supN)document.getElementById('statSup').closest('.don-stat').hidden=true;
   document.getElementById('reactCount').textContent='0';
   if(document.getElementById('shareLinkInput'))document.getElementById('shareLinkInput').value=campShareUrl(camp);
   if(document.getElementById('shareDesc'))document.getElementById('shareDesc').textContent=campLang==='es'?'Ayuda a "'+camp.title+'" a alcanzar su meta.':campLang==='pt'?'Ajude "'+camp.title+'" a atingir a sua meta.':campLang==='it'?'Aiuta "'+camp.title+'" a raggiungere il suo obiettivo.':'Help "'+camp.title+'" reach its goal.';
@@ -2121,7 +2122,7 @@ if(true){
   // close async IIFE below after the closing brace of the if(true) block
   const rel=[...sameCat,...others];
   document.getElementById('relGrid').innerHTML=rel.map(c=>{
-    const donCount=c.supN>0?c.supN.toLocaleString()+' '+t('donations','donations'):t('beFirst','Be the first to donate');
+    const donCount=c.supN>0?c.supN.toLocaleString()+' '+t('donations','donations'):t('viewCampaign','View campaign');
     const imgStyle=c.imgs&&c.imgs[0]?"background-image:url('"+c.imgs[0]+"')":'background:'+GRADS[c.img];
     const pctBar=Math.min(c.pct||0,100);
     const href=(window.campaignHref?window.campaignHref(c):('campaign-detail.html?id='+c.id));
