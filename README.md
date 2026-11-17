@@ -13,3 +13,5 @@ Publish the repository root with GitHub Pages (branch `main`, folder `/`). `.noj
 ## Data
 
 Campaign text, totals, supporter counts and related campaigns are a snapshot from the supplied archive. They do not update from Stripe. The archive did not include the other institutional pages; those navigation links point to the original website. Images and media referenced by the campaign data are included locally. No private Stripe keys are required.
+
+The contact form has no sending service in the supplied archive and does not send messages. It reports this limitation instead of showing a false success confirmation.

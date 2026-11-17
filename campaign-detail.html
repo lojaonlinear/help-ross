@@ -1552,20 +1552,7 @@ function optimizeImg(url,w=800){
 const IMG_OVERRIDE={};
 const GRADS={1:'linear-gradient(135deg,#045C28,#08733D)',2:'linear-gradient(135deg,#045C28,#2F744E)',3:'linear-gradient(135deg,#E5A62F,#F4B740)',4:'linear-gradient(135deg,#9D174D,#DB2777)',5:'linear-gradient(135deg,#045C28,#2F744E)',6:'linear-gradient(135deg,#16382A,#345B48)',7:'linear-gradient(135deg,#4F6F5D,#4F6F5D)',8:'linear-gradient(135deg,#92400E,#D97706)'};
 
-const EXTRA_IMGS={
-  '5ef7408e-3e48-4290-8e61-34dd291f74fe':['camp10_invoice1.webp','camp10_invoice2.webp','camp10_invoice3.webp'],
-  'cd510781-2809-47a8-9692-552fd002f518':['camp10_invoice1.webp','camp10_invoice2.webp','camp10_invoice3.webp'],
-  '57684d1e-3b5f-4b31-9a5f-022be4525004':['camp_lucy_img2.png','camp_lucy_img3.png'],
-  'bab40c93-626b-468e-8f24-fd42aeb46b93':['camp_youssef_img2.jpg'],
-  'f8bc2139-fdde-4274-a92b-cc1b2399ec9f':['camp_maria_img2.webp'],
-  '5f27bcd1-a7b0-4fe5-a90d-e504657c2abf':[
-    '/storage/v1/object/public/campaign-images/campaigns/africa4.webp',
-    '/storage/v1/object/public/campaign-images/campaigns/africa5.webp'
-  ],
-  '29ff6c24-a295-4746-9137-de5ac300e673':[
-    '/storage/v1/object/public/campaign-images/campaigns/africa7.webp'
-  ]
-};
+const EXTRA_IMGS={};
 
 let camp=null,liked=false,carIdx=0,imgs=[];
 let CAMPAIGNS_DB=[];
@@ -2619,8 +2606,7 @@ function submitContact(){
   const email=document.getElementById('contactInputEmail').value.trim();
   const msg=document.getElementById('contactInputMsg').value.trim();
   if(!name||!email||!msg){alert('Please fill in all fields.');return;}
-  closeContact();
-  alert('Message sent successfully!');
+  alert('This static page cannot send messages. Please contact the organizer through the original campaign.');
 }
 
 // ── Hourly rotation helper ───────────────────────────
