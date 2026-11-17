@@ -1116,7 +1116,7 @@ footer .footer-brand img[src$="lumani-impact-logo.png"],footer .fb img[src$="lum
         <span class="words-sec-title">Words of support</span>
         <span class="words-count" id="wordsCount"></span>
       </div>
-      <div class="words-sec-sub">Donate to share words of support.</div>
+      <div class="words-sec-sub">Messages shared with this campaign.</div>
       <div id="wordsList"></div>
     </div>
 
@@ -1221,7 +1221,7 @@ footer .footer-brand img[src$="lumani-impact-logo.png"],footer .fb img[src$="lum
     </div>
   </aside>
 
-  <div class="not-found" id="notFound" style="display: block;">
+  <div class="not-found" id="notFound" style="display:none;">
     <h2 style="font-family:var(--font-head);font-size:1.5rem;font-weight:800;margin-bottom:12px">Campaign not found</h2>
     <p style="color:var(--muted);margin-bottom:24px">This campaign may have ended or the link is incorrect.</p>
     <a href="campaigns.html"><button class="btn-sd primary" style="width:auto;padding:12px 32px">Browse Campaigns</button></a>
@@ -1730,7 +1730,7 @@ function applyStaticTranslations() {
   var mobSeeTop = document.getElementById('mobSeeTop');
   if (mobSeeTop) { var svgMst=mobSeeTop.querySelector('svg'); mobSeeTop.innerHTML=(svgMst?svgMst.outerHTML:'')+' '+t('mobSeeTop','See top'); }
   var wsSub = document.querySelector('.words-sec-sub');
-  if (wsSub) wsSub.textContent = t('wordsSub','Donate to share words of support.');
+  if (wsSub) wsSub.textContent = t('wordsSub','Messages shared with this campaign.');
   var roleEl = document.querySelector('.role');
   if (roleEl) { var locSpan=roleEl.querySelector('span'); roleEl.innerHTML=t('organizerRole','Organizer · ')+(locSpan?locSpan.outerHTML:''); }
   var stickyRlbl = document.querySelector('.mob-sticky-rlbl');
@@ -1898,6 +1898,7 @@ if(true){
     proofStyle.textContent='#mobLastDonor,#stickyDonor,#donorsWrap,#mobDonorsSec,#wordsSec,#wordsHr,.react-row,#statSup,#carSumCount,#carSumAvs{display:none!important}';
     document.head.appendChild(proofStyle);
   }
+  document.getElementById('notFound').style.display='none';
   document.title=camp.title+' — Lumani Impact';
   document.getElementById('bct').textContent=camp.title.length>50?camp.title.slice(0,50)+'…':camp.title;
   // Remove skeleton — conteúdo real está pronto
