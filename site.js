@@ -95,8 +95,8 @@
   };
 
   // Legacy dialogs keep keyboard focus inside, close with Escape, and restore focus.
-  document.querySelectorAll('.moverlay,.don-overlay').forEach(function (overlay) {
-    var modal = overlay.querySelector('.modal,.don-modal');
+  document.querySelectorAll('.moverlay,.don-overlay,#mobMenu').forEach(function (overlay) {
+    var modal = overlay.querySelector('.modal,.don-modal') || (overlay.id === 'mobMenu' ? overlay : null);
     if (!modal) return;
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-modal', 'true');
@@ -105,16 +105,22 @@
     if (heading) {
       if (!heading.id) heading.id = overlay.id + 'Heading';
       modal.setAttribute('aria-labelledby', heading.id);
-    } else modal.setAttribute('aria-label', 'Campaign information');
+    } else modal.setAttribute('aria-label', overlay.id === 'mobMenu' ? 'Navigation menu' : 'Campaign information');
     var returnFocus;
     new MutationObserver(function () {
       if (overlay.classList.contains('open')) {
         returnFocus = document.activeElement;
         document.body.classList.add('legacy-modal-open');
-        var close = modal.querySelector('.mclose,.don-modal-close');
+        var close = modal.querySelector('.mclose,.don-modal-close,#mobMenuClose');
         (close || modal).focus();
       } else {
         if (!document.querySelector('.moverlay.open,.don-overlay.open')) document.body.classList.remove('legacy-modal-open');
+        if (overlay.id === 'mobMenu') {
+          overlay.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('mob-menu-open');
+          var navButton = document.getElementById('hamburger');
+          if (navButton) navButton.classList.remove('active');
+        }
         if (returnFocus && returnFocus.isConnected) returnFocus.focus();
       }
     }).observe(overlay, { attributes: true, attributeFilter: ['class'] });
@@ -131,6 +137,8 @@
   document.querySelectorAll('.mclose,.don-modal-close').forEach(function (button) {
     if (button.textContent.trim() === '×') button.setAttribute('aria-label', 'Close dialog');
   });
+  var mobileClose = document.getElementById('mobMenuClose');
+  if (mobileClose) mobileClose.setAttribute('aria-label', 'Close navigation menu');
   document.querySelectorAll('.rel-nav-btn').forEach(function (button, index) { button.setAttribute('aria-label', index === 0 ? 'Previous campaigns' : 'Next campaigns'); });
   var searchOverlay = document.getElementById('navSearchOverlay');
   var menu = document.getElementById('mobMenu');
