@@ -780,7 +780,7 @@ body.mob-menu-open{overflow:hidden}
 </style>
 <link rel="stylesheet" href="./campaign-media_v%3Dd00e10834683.css?v=d00e108346">
 <script src="./campaign-media_v%3Db353ebb56364.js?v=79a5c1d0b9"></script>
-<script src="./offline-data_v%3Df7c3adaa0867.js?v=b769497870"></script>
+<script src="./offline-data_v%3Df7c3adaa0867.js?v=adcacf3910"></script>
 <script>window.campaignHref=function(c){var url='campaign-detail.html?slug='+encodeURIComponent((c&&(c.slug||c.id))||'');return window.LumaniImpactAttribution?window.LumaniImpactAttribution.decorate(url):url;};</script>
 <link rel="stylesheet" href="./assets/fonts/plus-jakarta-sans.css?v=fea2027573">
 <style id="lumani-impact-brand-overrides">
@@ -793,7 +793,7 @@ footer .footer-brand img[src$="lumani-impact-logo.png"],footer .fb img[src$="lum
 .footer-brand>img,footer .fb>img{height:44px!important;width:auto!important;max-width:220px!important;object-fit:contain!important}
 </style>
 <link rel="stylesheet" href="site.css?v=3dbe91de75">
-</head>
+<link rel="stylesheet" href="tracking.css?v=eefb34b505"><script src="tracking.js?v=009f77dba4" defer></script></head>
 <body>
 
 <nav>
@@ -1920,6 +1920,7 @@ if(true){
 
   // Title
   document.getElementById('campTitle').textContent=camp.title;
+  window.dispatchEvent(new Event('lumani:campaign-ready'));
 
   // Carousel
   imgs=camp.imgs&&camp.imgs.length>0?camp.imgs:[];
@@ -2589,5 +2590,5 @@ if(hbg&&mobNavEl){
 
 
 
-<script src="site.js?v=e330ba8864"></script>
+<script src="site.js?v=8851d891bf"></script>
 </body></html>

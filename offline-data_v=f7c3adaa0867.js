@@ -37,6 +37,7 @@
   window.fetch = function(input, init) {
     const raw = typeof input === 'string' ? input : (input && input.url) || '';
     const method = (init && init.method || 'GET').toUpperCase();
+    try { const live = new URL(raw, window.location.href); if (live.origin === 'https://help-ross.vercel.app' && live.pathname === '/api/meta-events' && nativeFetch) return nativeFetch(input, init); } catch (_) {}
     if (raw.includes('/rest/v1/campaigns')) {
       if (method !== 'GET')
         return jsonResponse({error:'This static site does not support writes.'}, 405);

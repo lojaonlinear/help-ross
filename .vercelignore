@@ -2,3 +2,7 @@
 .21st
 .nojekyll
 README.md
+node_modules
+public
+tests
+.env*

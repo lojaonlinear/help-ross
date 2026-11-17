@@ -56,8 +56,21 @@
     if (previousFocus && previousFocus.isConnected) previousFocus.focus();
     if (document.body.classList.contains('donation-route')) window.location.assign('campaign-detail.html' + window.location.search);
   });
-  continueLink.addEventListener('click', function (event) {
-    if (continueLink.getAttribute('aria-disabled') === 'true') event.preventDefault();
+  var checkoutInFlight = false;
+  window.addEventListener('pageshow', function () { checkoutInFlight = false; continueLink.removeAttribute('aria-busy'); });
+  continueLink.addEventListener('click', async function (event) {
+    if (continueLink.getAttribute('aria-disabled') === 'true' || checkoutInFlight) { event.preventDefault(); return; }
+    if (!window.LumaniMeta) return;
+    event.preventDefault();
+    checkoutInFlight = true;
+    continueLink.setAttribute('aria-busy', 'true');
+    var selected = dialog.querySelector('input[name="donation-amount"]:checked');
+    var destination = new URL(continueLink.href);
+    try {
+      var reference = await Promise.race([window.LumaniMeta.prepareCheckout(Number(selected.value)), new Promise(function (resolve) { setTimeout(function () { resolve(null); }, 1800); })]);
+      if (reference) destination.searchParams.set('client_reference_id', reference);
+    } catch {}
+    window.location.assign(destination.href);
   });
   dialog.addEventListener('change', function (event) {
     if (event.target.name !== 'donation-amount') return;
