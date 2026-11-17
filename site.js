@@ -32,7 +32,7 @@
     '<div class="donation-layout"><section class="donation-preview" aria-label="Campaign summary">' +
     '<img id="donationImage" alt=""><div class="donation-preview-body"><span class="donation-category">HEALTH</span>' +
     '<h2 id="donationCampaignTitle"></h2><progress id="donationProgress" max="100" aria-label="Campaign funding progress"></progress>' +
-    '<p id="donationTotals"></p><small>Campaign figures from the supplied source.</small></div></section>' +
+    '<p id="donationTotals"></p><small>Campaign totals are not updated in real time.</small></div></section>' +
     '<section class="donation-options"><header><h2 id="donationHeading">Choose your donation</h2>' +
     '<p>Select an amount to continue to Stripe.</p></header><div class="donation-form">' +
     '<fieldset><legend>SELECT AN AMOUNT (USD)</legend><div class="donation-amounts">' +
@@ -69,7 +69,7 @@
     continueLink.textContent = 'Donate $' + amount;
   });
   function formatMoney(amount) {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }).format(Number(amount) || 0);
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(Number(amount) || 0);
   }
   window.openDonation = function (campaign) {
     if (!campaign || dialog.open) return;

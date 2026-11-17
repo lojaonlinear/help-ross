@@ -11,6 +11,8 @@ button{touch-action:manipulation}
 .site-notice{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);max-width:calc(100% - 32px);width:max-content;padding:12px 20px;border-radius:10px;background:#16382a;color:#fff;box-shadow:0 4px 18px #0003;z-index:20000;opacity:0;pointer-events:none;font-size:14px}.site-notice.visible{opacity:1}
 .donation-dialog{border:0;border-radius:22px;padding:28px;background:#f5faf7;color:var(--ink,#16382a);width:min(920px,calc(100% - 32px));max-height:calc(100dvh - 32px);overflow-y:auto;box-shadow:0 24px 80px #0004;font:15px/1.55 var(--font-body,'Plus Jakarta Sans',sans-serif)}
 .donation-dialog::backdrop{background:#08271c99}
+.donation-dialog{margin:auto}
+.campaign-snapshot-note{font-size:11px;line-height:1.5;color:var(--muted);margin:10px 0 16px}
 .donation-close{position:absolute;top:4px;right:7px;z-index:2;border:0;border-radius:50%;width:40px;height:40px;background:transparent;color:#345b48;font-size:28px;cursor:pointer}
 .donation-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:24px;align-items:start;padding-top:15px}
 .donation-preview,.donation-options{background:#fff;border-radius:17px;overflow:hidden;box-shadow:0 6px 18px #16382a14}

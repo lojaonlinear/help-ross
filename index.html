@@ -1073,7 +1073,7 @@ footer .footer-brand img[src$="lumani-impact-logo.png"],footer .fb img[src$="lum
     <div class="share-sec">
       <hr style="margin:0 0 24px">
       <h3>Sharing helps more than you think</h3>
-      <p>On average, every share generates more donations — helping this fundraiser reach more people.</p>
+      <p>Sharing can help this fundraiser reach more people.</p>
       <div class="share-preview">
         <div class="share-prev-img"><div id="prevImg"></div></div>
         <div style="flex:1;min-width:0">
@@ -1182,10 +1182,10 @@ footer .footer-brand img[src$="lumani-impact-logo.png"],footer .fb img[src$="lum
       <div class="raised-s" id="raisedGoal">of $0</div>
       <div class="don-stat">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-        <span><b id="statSup">0</b> donations recorded in the source</span>
+        <span><b id="statSup">0</b> donations</span>
       </div>
 
-      <button class="btn-sd primary" onclick="goToDonate()">Donate now</button>
+      <p class="campaign-snapshot-note">Campaign totals are not updated in real time.</p><button class="btn-sd primary" onclick="goToDonate()">Donate now</button>
       <button class="btn-sd secondary" onclick="openShare()">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
         Share
@@ -1561,7 +1561,7 @@ const LANG_LOCALE = {es:'es',pt:'pt-PT',it:'it'};
 const TRANSLATIONS = {
   es:{
     activeSince:'Activo desde ',createdDot:'Creado · ',organizedBy:'Organizado por ',
-    of:'de ',recentDonations:'donaciones recientes',donations:'donaciones',
+    of:'de ',recentDonations:'donaciones',donations:'donaciones',
     beFirst:'Sé el primero en donar',anonymous:'Anónimo',topDonation:'Donación mayor',
     readMore:'Leer más ↓',showLess:'Ver menos ↑',notFoundBct:'No encontrado',
     donors:'donadores',donated:' donó ',raised:'recaudado',recentDonation:'Donación reciente',
@@ -1605,7 +1605,7 @@ const TRANSLATIONS = {
   },
   pt:{
     activeSince:'Ativo desde ',createdDot:'Criado · ',organizedBy:'Organizado por ',
-    of:'de ',recentDonations:'doações recentes',donations:'doações',
+    of:'de ',recentDonations:'doações',donations:'doações',
     beFirst:'Seja o primeiro a doar',anonymous:'Anónimo',topDonation:'Maior doação',
     readMore:'Ler mais ↓',showLess:'Ver menos ↑',notFoundBct:'Não encontrado',
     donors:'doadores',donated:' doou ',raised:'arrecadado',recentDonation:'Doação recente',
@@ -1707,7 +1707,7 @@ function applyStaticTranslations() {
   var spP = document.querySelector('.share-text p');
   if (spP) spP.innerHTML = t('sharingP','Sharing this fundraiser can help it reach more people.');
   var ssSideP = document.querySelector('.share-sec p');
-  if (ssSideP) ssSideP.textContent = t('shareSideP','On average, every share generates more donations — helping this fundraiser reach more people.');
+  if (ssSideP) ssSideP.textContent = t('shareSideP','Sharing can help this fundraiser reach more people.');
   var nfH2 = document.querySelector('.not-found h2');
   if (nfH2) nfH2.textContent = t('notFoundTitle','Campaign not found');
   var nfP = document.querySelector('.not-found p');
